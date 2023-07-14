@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+
+<BaseLayout title=" À propos | Grégoire Gasmi" description="A propos de Grégoire">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos de moi"
+				tagline="« Dynamique, motivé et ambitieux » serait la réponse que je donnerai si l'on me demande comment je me décrirai en 3 mots."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/IMG-7347.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Qui suis-je ?</h2>
+				<div class="content">
+					<p>
+						Issu d'un Bac STI2D(sciences et technologies de l'industrie et du développement durable) option SIN(Système d'Information et Numérique),
+						 à la suite duquel j'ai fait un Bachelor Ingénierie Numérique à l'ESLIV(École supérieure d'ingénieurs Léonard-de-Vinci),
+						  je suis passionné d'informatique depuis mon plus jeune âge.
+					</p>
+
+					<p>
+						
+					</p>
+					<p>
+						
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Certifications</h2>
+				<div class="content">
+					<p> • <a href="https://verify.skilljar.com/c/i678d6zmgiaz">Dataiku : Core designer Certificate</a><br>
+						• <a href="https://verify.skilljar.com/c/i678d6zmgiaz">Dataiku : ML Practitioner Certificate</a><br>
+						• <a href="https://www.smartcertificate.com/SmartDiploma/Default.aspx?1%7cb6b7b048-7d3d-4782-9dbb-ca315af3d5ab%7c4c0ffe0a-d1f2-4664-bf29-5aeca565f681">Dthinking academy : Design Thinker</a> </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>• Bac STI2D (obetnu en 2019)<br>
+				       • Bachelor Ingénierie Numérique (obtenu en 2022)<br></p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Expériences</h2>
+				<div class="content">
+					<p><h5>• Ingénieur Cosultant Junior pou PSA(de Janvier 2023 à Juillet 2023) </h5>Développement Oracle. Création de packages, de scripts, de tables. Utilisation
+						de Putty, WinSCP, Oracle.<br><br>
+				       <h5>• Stage alterné développeur web chez Nomego(de Janvier 2022 à Juillet 2022)</h5>Conception du site marchand de l'entreprise.<br><br>
+					   <h5>• Stage développeur Full-Stack chez Y2A WEB(de Juin 2021 à Août 2021)</h5>Stage au cours duquel j'ai eu l'occasion de travailler sur plusieurs sites web
+					   (notamment celui de l'entreprise) et des scripts<br></p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
